@@ -32,4 +32,9 @@ const userSchema = new mongoose.Schema({
         default:'CUSTOMER',
         enum:['CUSTOMER','ADMIN']
     }
-});
+},{timestamps:true});
+
+
+// Define collection name where schema will be stored
+const userModel = mongoose.model('User',userSchema);
+module.exports = userModel;
